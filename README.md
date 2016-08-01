@@ -1,7 +1,15 @@
 # antd-dva-admin-starter
-这是一个简单的基于antd dva的管理系统demo，实现的登录注销及基本的CURD操作
+这是一个简单的基于[dva](https://github.com/dvajs/dva) [antd](https://github.com/ant-design/ant-design) 的管理系统demo，实现的登录注销及基本的CURD操作
+
+
+> - [dva 入门：手把手教你用写应用](https://github.com/sorrycc/blog/issues/8)
+- [dva 简介](https://github.com/dvajs/dva/issues/1)
+- [React + Redux 最佳实践](https://github.com/sorrycc/blog/issues/1) (dva 基于此封装)
+- [subscription 及其适用场景](https://github.com/dvajs/dva/issues/3#issuecomment-229250708)
+- [支付宝前端应用架构的发展和选择: 从 roof 到 redux 再到 dva](https://github.com/sorrycc/blog/issues/6)
+
 # 前言
-react作为一个mvc里面的View层它相对于angular及Vue等框架而言有很多痛点，其中state的管理、组件之间通信异步操作的处理都是烦人的事情，参考了很多资料目前比较好的架构组合是react+redux+react-router+redux-saga（或者redux-thunk），由于这些三redux或者redux-saga都是三方库不是真正的框架所以在组织代码的时候回显得杂乱，添加一个功能需要修改不同文件夹里面的文件，这样不利于代码的组织。这个时候dva出来的，他是对上面几个库的二次封装，很happy的看到这个库，对于里面的概念也相对很好理解，相对于之前的架构而言代码组织更加清晰，代码干净明了。基本实现了mvc架构。
+react作为一个mvc里面的View层它相对于angular及Vue等框架而言有很多痛点，其中state的管理、组件之间通信异步操作的处理都是烦人的事情，参考了很多资料目前比较好的架构组合是react+redux+react-router+redux-saga（或者redux-thunk），由于redux或者redux-saga都是三方库不是真正的框架所以在组织代码的时候回显得杂乱，添加一个功能需要修改不同文件夹里面的文件，这样不利于代码的组织。这个时候dva出来的，他是对上面几个库的二次封装，很happy的看到这个库，对于里面的概念也相对很好理解，相对于之前的架构而言代码组织更加清晰，代码干净明了。基本实现了mvc架构。
 
 ## 目录结构
 
@@ -27,7 +35,7 @@ react作为一个mvc里面的View层它相对于angular及Vue等框架而言有�
 ## model详解
 model层主要处理逻辑及数据（服务器数据及state），其实的namespace是对model的标识，state就是redux里面的initState，reducer就是redux里面的reducer，reducer用于操作state，subscriptions字面上的意思是订阅及添加一个监听器，比如router的变化KEYBORD事件监听等，effects为redux-saga里面的概念用于处理异步操作提供call，put等方法来进行异步处理。
 ## 实例（以登录为例）
-### 1、添加modul
+### 1、添加model
   - 在model文件夹下面添加一个user.js文件（登录属于用户管理模块）
    ```javascript
   import { call, put } from 'dva/effects';//
