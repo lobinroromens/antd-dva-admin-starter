@@ -6,7 +6,7 @@ import MainLayout from '../components/common/MainLayout';
 import AddressList from '../components/AddressList';
 function IndexPage({ dispatch, addressList }){
   const {isLoading,data} = addressList;
-  const viewAdressDetail= function(id){
+  const viewAdressDetail = function(id){
     dispatch({
       type:'addressList/view',
       payload:{
@@ -14,8 +14,14 @@ function IndexPage({ dispatch, addressList }){
       }
     })
   };
-  const addressDelete=function(id){
-    console.log(id+"deleted");
+  const addressDelete = function(id){
+    console.log(id);
+    dispatch({
+      type:'addressList/delete',
+      payload:{
+        key:id
+      }
+    })
   };
   const tableProps={
     dataSource:data,

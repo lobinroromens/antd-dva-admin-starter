@@ -1,5 +1,5 @@
 import { call, put } from 'dva/effects';
-import { getAddressList ,getAddressDetail} from '../services/getAddressList';
+import { getAddressList ,getAddressDetail,deleteAddressList} from '../services/getAddressList';
 import { Router, Route, hashHistory } from 'dva/router';
 export default {
   namespace:'addressList',
@@ -57,6 +57,17 @@ export default {
             current:data.data[1]
           }
         })
+      }
+    },
+    *['addressList/delete'](state,payload){
+      const {data} = yield call(deleteAddressList,state.payload);
+      if (data.success) {
+        yield put({
+          type: 'getAddressList/Success',
+          payload:{
+            data:data.data,
+          }
+        });
       }
     }
   }

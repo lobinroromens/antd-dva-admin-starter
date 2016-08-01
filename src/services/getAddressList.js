@@ -7,3 +7,8 @@ export async function getAddressList(params) {
 export async function getAddressDetail(params){
   return request(`${config.apiBaseUrl}/addressList?${qs.stringify(params)}`)
 }
+export async function deleteAddressList(params){
+  return request(`${config.apiBaseUrl}/addressList?${qs.stringify(params)}`,{
+    method:"DELETE"
+  })
+}
