@@ -29,7 +29,7 @@ model层主要处理逻辑及数据（服务器数据及state），其实的name
 ## 实例（以登录为例）
 ### 1、添加modul
   - 在model文件夹下面添加一个user.js文件（登录属于用户管理模块）
-   ```
+   ```javascript
   import { call, put } from 'dva/effects';//
   import {login} from '../services/user';
   import { Router, Route, hashHistory } from 'dva/router';
@@ -111,7 +111,7 @@ model层主要处理逻辑及数据（服务器数据及state），其实的name
 - 在components的user目录下建立login.js
   使用antd快速搞定
 - 在routes下面建立一个Login.js
-```
+```javascript
 ...
 const handleSubmit = function({userName,password}){
   dispatch({
@@ -131,5 +131,5 @@ function mapStateToProps({ user }) {
   return {user};
 }
 export default connect(mapStateToProps)(Login);
-```
+
 链接完成后Login就可以访问user model里面的state以及effects来进行和服务器的交互以及操作state，state
