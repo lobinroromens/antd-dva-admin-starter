@@ -108,9 +108,9 @@ model层主要处理逻辑及数据（服务器数据及state），其实的name
   }
 
   ```
-- 在components的user目录下建立login.js
+  - 在components的user目录下建立login.js
   使用antd快速搞定
-- 在routes下面建立一个Login.js
+  - 在routes下面建立一个Login.js
 ```javascript
 ...
 const handleSubmit = function({userName,password}){
