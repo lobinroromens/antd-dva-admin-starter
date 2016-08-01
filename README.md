@@ -10,6 +10,7 @@
 
 - run npm start
 - build npm run build
+
 ## 前言
 react作为一个mvc里面的View层它相对于angular及Vue等框架而言有很多痛点，其中state的管理、组件之间通信异步操作的处理都是烦人的事情，参考了很多资料目前比较好的架构组合是react+redux+react-router+redux-saga（或者redux-thunk），由于redux或者redux-saga都是三方库不是真正的框架所以在组织代码的时候回显得杂乱，添加一个功能需要修改不同文件夹里面的文件，这样不利于代码的组织。这个时候dva出来的，他是对上面几个库的二次封装，很happy的看到这个库，对于里面的概念也相对很好理解，相对于之前的架构而言代码组织更加清晰，代码干净明了。基本实现了mvc架构。
 
