@@ -20,5 +20,6 @@
 - 1、设计model对于小型项目而言一个model对应一个功能模块，比如用户模块就添加一个usermodel用户相关的model都在这里面，对于大型项目可以适当的拆分model
 - 2、设计View层及comppnents并确定需要的数据及action
 - 3、设计controler层及routes，用connect把model和View链接起来，把action及渲染View需要的数据通过props传入view及components里面
+
 ## model详解
 model层主要处理逻辑及数据（服务器数据及state），其实的namespace是对model的标识，state就是redux里面的initState，reducer就是redux里面的reducer，reducer用于操作state，subscriptions字面上的意思是订阅及添加一个监听器，比如router的变化keyborder事件监听等，effects为redux-saga里面的概念用于处理异步操作提供call，put等方法来进行异步处理。
