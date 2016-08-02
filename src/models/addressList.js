@@ -19,7 +19,10 @@ export default {
         }
         if(pathArr[1]=='addressView'&&pathArr.length=='3'){
           dispatch({
-            type:'addressList/view'
+            type:'addressList/view',
+            payload:{
+              key:pathArr[2]
+            }
           })
         }
       });
